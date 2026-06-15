@@ -1,0 +1,13 @@
+{
+  "title": "Build a tiny Python app",
+  "commands": [
+    {"index": 0, "cmd": "python3 --version", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": "Python 3.12.3"},
+    {"index": 1, "cmd": "ls", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": ""},
+    {"index": 2, "cmd": "pip install nonexistent-package-xyz999", "exit_code": 1, "cwd": "/tmp/demo", "output_tail": "ERROR: Could not find a version"},
+    {"index": 3, "cmd": "mkdir -p build", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": ""},
+    {"index": 4, "cmd": "echo \"print('hello from runbook')\" > build/app.py", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": ""},
+    {"index": 5, "cmd": "cat build/app.py", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": "print('hello from runbook')"},
+    {"index": 6, "cmd": "python3 build/app.py", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": "hello from runbook"},
+    {"index": 7, "cmd": "python3 build/app.py", "exit_code": 0, "cwd": "/tmp/demo", "output_tail": "hello from runbook"}
+  ]
+}
